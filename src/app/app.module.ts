@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { basketActionReducer } from '../ngrx/reducer/basket.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    StoreModule.forRoot({ basket: basketActionReducer }),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
